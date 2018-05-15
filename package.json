@@ -19,6 +19,7 @@
   "homepage": "https://github.com/gtvj/unit-testing-advanced#readme",
   "devDependencies": {
     "chai": "^4.1.2",
-    "nock": "^9.2.6"
+    "nock": "^9.2.6",
+    "rewire": "^4.0.1"
   }
 }
