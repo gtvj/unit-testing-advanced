@@ -11,3 +11,10 @@ You'll obviously need Node.js to run the examples here.
 
 * You'll need to install Mocha globally to use the `mocha` command. To do this type `npm install -g mocha`
 * Install other dependencies with `npm install`
+
+## Examples
+
+* [simple-spec.js](test/simple-spec.js) illustrates the simplest form of Unit Test
+* [asynchronous-spec.js](test/asynchronous-spec.js) illustrates an asynchronous test. A few things to note here:
+    * the use of `done()` to signify to Mocha that the asynchronous test is complete. Without this the test would appear to pass 
+    * this example is actually an anti-pattern because our test is reliant upon the network and Wikipedia being up. This will result in a slow running test which could fail because of reasons outside of the System Under Test (SUT). We will address this later with mocking.
