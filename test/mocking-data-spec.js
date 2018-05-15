@@ -22,7 +22,7 @@ describe("Checking for users", function () {
 
     it("Should check for users in the data", function () {
 
-        let user = 'bob@bob.com'
+        let user = 'bob@bob.com';
 
         let result = newsletter_app.check_for_user(user);
 

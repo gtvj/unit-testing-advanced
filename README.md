@@ -19,4 +19,6 @@ You'll obviously need Node.js to run the examples here.
     * the use of `done()` to signify to Mocha that the asynchronous test is complete. Without this the test would appear to pass 
     * this example is actually an anti-pattern because our test is reliant upon the network and Wikipedia being up. This will result in a slow running test which could fail because of reasons outside of the System Under Test (SUT). We will address this later with mocking.
 * [asynchronous-spec-with-mocked-server.js](test/asynchronous-spec-with-mocked-server-spec.js) illustrates using the [Nock](https://github.com/node-nock/nock) library to create a 'mock' for our server endpoint. In this way we can intercept requests to the endpoint and provide a mocked response. In this way we are able to isolate our code (the SUT) from the collaborator (the HTTP endpoint).
-* [mocking-data.js](test/mocking-data.js) illustrates how you can mock other dependencies (in this case a data store). Here we use the [rewire](https://github.com/jhnns/rewire) Node.js module
+* [mocking-data-spec.js](test/mocking-data-spec.js) illustrates how you can mock other dependencies (in this case a data store). Here we use the [rewire](https://github.com/jhnns/rewire) Node.js modul
+* [Coming soon...] Spies
+* [Coming soon...] Stubs
