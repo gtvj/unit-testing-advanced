@@ -1,0 +1,20 @@
+{
+  "name": "unit-testing-advanced",
+  "version": "1.0.0",
+  "description": "This repository introduces and provides examples of some advanced Unit Testing features. Examples are in Node.js but the techniques are applicable across languages and platforms.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gtvj/unit-testing-advanced.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gtvj/unit-testing-advanced/issues"
+  },
+  "homepage": "https://github.com/gtvj/unit-testing-advanced#readme"
+}
