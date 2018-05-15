@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/gtvj/unit-testing-advanced/issues"
   },
-  "homepage": "https://github.com/gtvj/unit-testing-advanced#readme"
+  "homepage": "https://github.com/gtvj/unit-testing-advanced#readme",
+  "devDependencies": {
+    "chai": "^4.1.2"
+  }
 }
