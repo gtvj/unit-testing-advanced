@@ -14,11 +14,22 @@ You'll obviously need Node.js to run the examples here.
 
 ## Examples
 
+### The basics - a simple test
+
 * [simple-spec.js](test/simple-spec.js) illustrates the simplest form of Unit Test
+
+### When things get asynchronous
+
 * [asynchronous-spec.js](test/asynchronous-spec.js) illustrates an asynchronous test. A few things to note here:
     * the use of `done()` to signify to Mocha that the asynchronous test is complete. Without this the test would appear to pass 
     * this example is actually an anti-pattern because our test is reliant upon the network and Wikipedia being up. This will result in a slow running test which could fail because of reasons outside of the System Under Test (SUT). We will address this later with mocking.
+
+### Mocking
+
 * [asynchronous-spec-with-mocked-server.js](test/asynchronous-spec-with-mocked-server-spec.js) illustrates using the [Nock](https://github.com/node-nock/nock) library to create a 'mock' for our server endpoint. In this way we can intercept requests to the endpoint and provide a mocked response. In this way we are able to isolate our code (the SUT) from the collaborator (the HTTP endpoint).
 * [mocking-data-spec.js](test/mocking-data-spec.js) illustrates how you can mock other dependencies (in this case a data store). Here we use the [rewire](https://github.com/jhnns/rewire) Node.js modul
-* [Coming soon...] Spies
+
+### Spies
+
+* [spy-wrapping-existing-method-spec.js](test/spy-wrapping-existing-method-spec.js) illustrates how you can use a Spy to wrap an existing method. As the [documentation explains](http://sinonjs.org/releases/v4.2.2/spies/), when used in this way "the spy will behave exactly like the original method (including when used as a constructor), but you will have access to data about all calls." 
 * [Coming soon...] Stubs

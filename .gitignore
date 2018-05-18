@@ -63,3 +63,6 @@ typings/
 .next
 ### JetBrains template
 .idea/
+
+### Specific to this repo
+this_will_be_created.txt
