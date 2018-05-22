@@ -27,6 +27,11 @@ You'll obviously need Node.js to run the examples here.
 
 ### Doubles
 
-[Todo] - spies
+Spies, stubs and mocks are all forms of _test double_. Think of a double is being like a 'stunt double' (in that it stands in for an actor)
+
+#### Spies are a type of double
+
+Spies are used to get detailed information about function calls. See [test/doubles-spy-spec.js](test/doubles-spy-spec.js) for an example of spy double. Note: **spies do not affect the behaviour of a function**. To do that you need a stub.
+
 [Todo] - stubs
 [Todo] - mocks
