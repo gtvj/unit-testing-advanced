@@ -33,5 +33,12 @@ Spies, stubs and mocks are all forms of _test double_. Think of a double is bein
 
 Spies are used to get detailed information about function calls. See [test/doubles-spy-spec.js](test/doubles-spy-spec.js) for an example of spy double. Note: **spies do not affect the behaviour of a function**. To do that you need a stub.
 
-[Todo] - stubs
-[Todo] - mocks
+#### Stubs are a type of double
+
+Stubs are like spies but they **replace the target**. See:
+ 
+* [test/doubles-stub-simple-replacement-spec.js](test/doubles-stub-simple-replacement-spec.js) for an example of a simple stub double.
+* [Todo] - stubs to trigger different code paths
+* [Todo] - stubs to simplify testing async code
+
+Remember this: **stubs replace the function under test**
