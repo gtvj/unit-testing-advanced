@@ -38,7 +38,7 @@ Spies are used to get detailed information about function calls. See [test/doubl
 Stubs are like spies but they **replace the target**. See:
  
 * [test/doubles-stub-simple-replacement-spec.js](test/doubles-stub-simple-replacement-spec.js) for an example of a simple stub double.
-* [Todo] - stubs to trigger different code paths
+* [test/doubles-stub-trigger-specific-path-spec.js](test/doubles-stub-trigger-specific-path-spec.js) for an example of using a stub to simulate a collaborator (in this case, our database) to throw an error and assert that our callback receives the error.
 * [Todo] - stubs to simplify testing async code
 
 Remember this: **stubs replace the function under test**
