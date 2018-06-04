@@ -18,18 +18,27 @@ You'll obviously need Node.js to run the examples here.
 
 * [simple-spec.js](test/simple-spec.js) illustrates the simplest form of Unit Test
 
-### When things get asynchronous
+### Asynchronous testing
 
-* [asynchronous-spec.js](test/asynchronous-spec.js) illustrates an asynchronous test. A few things to note here:
+* [asynchronous-spec-hits-real-server-spec.js](test/asynchronous-spec-hits-real-server-spec.js) illustrates an asynchronous test. A few things to note here:
     * the use of `done()` to signify to Mocha that the asynchronous test is complete. Without this the test would appear to pass 
     * this example is actually an anti-pattern because our test is reliant upon the network and Wikipedia being up. This will result in a slow running test which could fail because of reasons outside of the System Under Test (SUT). We will address this later with mocking.
+* [asynchronous-spec-mocked-server-spec.js](test/asynchronous-spec-mocked-server-spec.js) is a more realistic example that uses the 'Nock' library to mock a server.
 
-### Mocking
+### Doubles
 
-* [asynchronous-spec-with-mocked-server.js](test/asynchronous-spec-with-mocked-server-spec.js) illustrates using the [Nock](https://github.com/node-nock/nock) library to create a 'mock' for our server endpoint. In this way we can intercept requests to the endpoint and provide a mocked response. In this way we are able to isolate our code (the SUT) from the collaborator (the HTTP endpoint).
-* [mocking-data-spec.js](test/mocking-data-spec.js) illustrates how you can mock other dependencies (in this case a data store). Here we use the [rewire](https://github.com/jhnns/rewire) Node.js modul
+Spies, stubs and mocks are all forms of _test double_. Think of a double is being like a 'stunt double' (in that it stands in for an actor)
 
-### Spies
+#### Spies are a type of double
 
-* [spy-wrapping-existing-method-spec.js](test/spy-wrapping-existing-method-spec.js) illustrates how you can use a Spy to wrap an existing method. As the [documentation explains](http://sinonjs.org/releases/v4.2.2/spies/), when used in this way "the spy will behave exactly like the original method (including when used as a constructor), but you will have access to data about all calls." 
-* [Coming soon...] Stubs
+Spies are used to get detailed information about function calls. See [test/doubles-spy-spec.js](test/doubles-spy-spec.js) for an example of spy double. Note: **spies do not affect the behaviour of a function**. To do that you need a stub.
+
+#### Stubs are a type of double
+
+Stubs are like spies but they **replace the target**. See:
+ 
+* [test/doubles-stub-simple-replacement-spec.js](test/doubles-stub-simple-replacement-spec.js) for an example of a simple stub double.
+* [test/doubles-stub-trigger-specific-path-spec.js](test/doubles-stub-trigger-specific-path-spec.js) for an example of using a stub to simulate a collaborator (in this case, our database) to throw an error and assert that our callback receives the error.
+* [Todo] - stubs to simplify testing async code
+
+Remember this: **stubs replace the function under test**
