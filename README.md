@@ -24,6 +24,7 @@ You'll obviously need Node.js to run the examples here.
     * the use of `done()` to signify to Mocha that the asynchronous test is complete. Without this the test would appear to pass 
     * this example is actually an anti-pattern because our test is reliant upon the network and Wikipedia being up. This will result in a slow running test which could fail because of reasons outside of the System Under Test (SUT). We will address this later with mocking.
 * [asynchronous-spec-mocked-server-spec.js](test/asynchronous-spec-mocked-server-spec.js) is a more realistic example that uses the 'Nock' library to mock a server.
+* [asynchronous-spec-promise-based.js](test/asynchronous-spec-promise-based.js) is an example of testing a promise-based async API (similar to Fetch)
 
 ### Doubles
 
@@ -39,6 +40,6 @@ Stubs are like spies but they **replace the target**. See:
  
 * [test/doubles-stub-simple-replacement-spec.js](test/doubles-stub-simple-replacement-spec.js) for an example of a simple stub double.
 * [test/doubles-stub-trigger-specific-path-spec.js](test/doubles-stub-trigger-specific-path-spec.js) for an example of using a stub to simulate a collaborator (in this case, our database) to throw an error and assert that our callback receives the error.
-* [Todo] - stubs to simplify testing async code
+* [test/doubles-stub-simplify-testing-async.js](test/doubles-stub-to-simplify-testing-async.js) for an example of using a stub to simplify testing async code.
 
-Remember this: **stubs replace the function under test**
+Remember this: **stubs _replace_ the function under test**
